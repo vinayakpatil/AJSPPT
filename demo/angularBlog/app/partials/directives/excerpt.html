@@ -1,0 +1,11 @@
+<li class="media">
+    <a class="pull-left thumbnail" href="#/post/{{post.id}}">
+        <img class="media-object" width="100" ng-src="img/{{post.category}}.png" alt="{{post.title}}">
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading">{{post.title | uppercase}} <small>{{post.category}}</small></h4>
+        <p ng-bind="makeExcerpt(post.post)"></p>
+        <p class="readmore"><a href="#/post/{{post.id}}">Read More...</a>
+        </p>
+    </div>
+</li>
