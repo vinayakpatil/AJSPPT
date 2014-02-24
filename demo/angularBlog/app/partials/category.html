@@ -1,0 +1,8 @@
+<h2>Posts for category: <span class="label label-default">{{category | uppercase}}</span></h2>
+<ul class="media-list col-md-12">
+    <excerpt ng-repeat="post in posts|filter:search" post="post"/>
+
+</ul>
+<h3 ng-if="posts.length === 0"> No posts available</h3>
+
+

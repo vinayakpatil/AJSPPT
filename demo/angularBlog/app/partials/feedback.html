@@ -1,0 +1,49 @@
+<form class="form-horizontal" role="form" name="feedbackForm" novalidate ng-submit="submitForm()">
+    <div class="form-group">
+        <legend>Feedback</legend>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <span>
+            <strong class="text-danger" ng-show="feedbackForm.name.$dirty && feedbackForm.name.$invalid && !feedbackForm.name.$focused">Name is required.</strong>
+        </span>
+        <input type="text" ng-focus class="form-control" id="name" ng-model="feedback.name" required name="name" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <span>
+            <strong class="text-danger" ng-show="feedbackForm.email.$dirty && feedbackForm.email.$invalid && !feedbackForm.email.$focused">Please enter a valid email address.</strong>
+        </span>
+        <input type="email" ng-focus class="form-control" id="email" ng-model="feedback.email" name="email" placeholder="Enter email" required>
+    </div>
+    <div class="form-group">
+        <label for="mvc">Favourite MVC framework/library</label>
+        <span>
+            <strong class="text-danger"  ng-show="feedbackForm.mvc.$dirty && feedbackForm.mvc.$invalid && !feedbackForm.mvc.$focused">Please choose a mvc option.</strong>
+        </span>
+        <select class="form-control" ng-focus id="mvc" ng-model="feedback.mvc" name="mvc" required>
+            <option disabled selected>Select one</option>
+            <option value="backbone">Backbone</option>
+            <option value="angular">Angular</option>
+            <option value="knockout">Knockout</option>
+            <option value="ember">Ember</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="comments">Comments</label>
+        <span>
+            <strong class="text-danger" ng-show="feedbackForm.comments.$dirty && feedbackForm.comments.$invalid && !feedbackForm.comments.$focused">Comment is required.</strong>
+        </span>
+        <textarea class="form-control" ng-focus id="comments" ng-model="feedback.comments" required name="comments" placeholder="Enter comments"></textarea>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" name="subscribed" ng-model="feedback.subscribed">Subscribe to our NewsLetter
+        </label>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" name="submit" ng-disabled="feedbackForm.$invalid">Submit</button>
+    </div>
+</form>
