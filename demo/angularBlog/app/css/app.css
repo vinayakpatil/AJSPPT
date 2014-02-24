@@ -1,5 +1,30 @@
 /* app css stylesheet */
 
+/* Header */
+.navbar-form.navbar-right:last-child{
+	margin-right: 10px;
+}
+
+h2{
+	border-bottom: 1px ridge #999;
+	margin-bottom: 30px;
+	line-height: 2;
+}
+
+/* Cotainer */
+
 .container{
   margin-top: 60px;
+}
+
+.showComments{
+	cursor: pointer;
+}
+
+/* Footer */
+.mainFooter{
+	margin: 5px 0 30px;
+}
+.mainFooter p{
+	text-align: center;
 }

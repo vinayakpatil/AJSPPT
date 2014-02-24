@@ -36,6 +36,21 @@ angular.module('myApp.services', [])
             return deferred.promise;
         };
 
+        this.getPostsByCategory = function(category){
+            var deferred = $q.defer();
+            if (_posts) {
+                deferred.resolve(_filterByCategory(category));
+            } else{
+                this.getPosts().then(function() {
+                    deferred.resolve(_filterByCategory(category));
+                }, function() {
+                    deferred.reject('Error occured while fetching posts with category ' + category);
+                });
+            }
+
+            return deferred.promise;
+        };
+
         /* Helper functions */
         function _findPost(id) {
             var index, length, post;
@@ -46,6 +61,12 @@ angular.module('myApp.services', [])
                 }
             }
             return post;
-        };
+        }
+
+        function _filterByCategory(category){
+            return _posts.filter(function(post){
+                return post.category === category;
+            })
+        }
     })
     .value('version', '0.1');

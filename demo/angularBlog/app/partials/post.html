@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h2>{{post.title | uppercase}}</h2>
+        <h3>{{post.title | uppercase}}</h3>
         <small>by <cite>{{post.first_name}} {{post.last_name}}</cite>, {{post.date_created}}</small>
     </div>
     <div class="panel-body">
@@ -9,13 +9,15 @@
     <div class="panel-footer"><small>by <cite>{{post.first_name}} {{post.last_name}}</cite></small></div>
 </div>
 
-<h4 class="well">Comments</h4>
-<div class="media">
-    <a class="pull-left" href="#">
-        <img class="media-object" src="img/person-placeholder.jpg" width="60" alt="Image">
-    </a>
-    <div class="media-body">
-        <h4 class="media-heading">Comments</h4>
-        <p>Text goes here...</p>
+<h4 class="well well-small">Comments <i  ng-click="toggleComments()" toggle-comments="" class="glyphicon glyphicon-arrow-down showComments"></i></h4>
+<ul class="media-list" class="comments" ng-show="showComments">
+    <div class="media" ng-repeat="comment in post.comments track by $index">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="img/person-placeholder.jpg" width="60" alt="Plceholder for user">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">Annonymous</h4>
+            <p>{{comment}}</p>
+        </div>
     </div>
-</div>
+</ul>

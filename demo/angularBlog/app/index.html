@@ -27,7 +27,13 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#/home">Home</a>
                 </li>
-                <li><a href="#/view2">Categories</a>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="category in categories track by $index">
+                            <a href="#/categories/{{category}}">{{category|uppercase}}</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             <form class="navbar-form navbar-right" role="search">
@@ -35,30 +41,15 @@
                     <input type="text" ng-model="search.title" class="form-control" placeholder="Search">
                 </div>
             </form>
-            <!-- <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a>
-                        </li>
-                        <li><a href="#">Another action</a>
-                        </li>
-                        <li><a href="#">Something else here</a>
-                        </li>
-                        <li><a href="#">Separated link</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul> -->
         </div>
         <!-- /.navbar-collapse -->
     </nav>
     <div class="container">
         <div ng-view class="row"></div>
+        <footer class="mainFooter">
+            <p><small>&copy; Copyright <a href="#">Angular JS</a> Team </small></p>
+        </footer>
     </div>
-
     <!-- External Libraries -->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-route.js"></script>
