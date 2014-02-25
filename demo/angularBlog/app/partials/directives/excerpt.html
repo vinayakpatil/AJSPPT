@@ -3,7 +3,7 @@
         <img class="media-object" width="100" ng-src="img/{{post.category}}.png" alt="{{post.title}}">
     </a>
     <div class="media-body">
-        <h4 class="media-heading">{{post.title | uppercase}} <span class="badge">{{post.category}}</span></h4>
+        <h4 class="media-heading">{{post.title | uppercase}} <span class="badge">{{post.date_created | blogTime}}</span></h4>
         <p ng-bind="makeExcerpt(post.post)"></p>
         <p class="readmore"><a href="#/post/{{post.id}}">Read More...</a>
         </p>

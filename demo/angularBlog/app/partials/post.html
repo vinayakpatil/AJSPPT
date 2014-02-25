@@ -1,15 +1,21 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3>{{post.title | uppercase}}</h3>
-        <small>by <cite>{{post.first_name}} {{post.last_name}}</cite>, {{post.date_created}}</small>
+        <small>by
+            <cite>{{post.first_name}} {{post.last_name}}</cite>, {{post.date_created}}</small><a href="#/categories/{{post.category}}" class="label label-primary pull-right">{{post.category | uppercase}}</a>
     </div>
     <div class="panel-body">
         {{post.post}}
     </div>
-    <div class="panel-footer"><small>by <cite>{{post.first_name}} {{post.last_name}}</cite></small></div>
+    <div class="panel-footer">
+        <small>by
+            <cite>{{post.first_name}} {{post.last_name}}</cite>
+        </small> <a href="#/categories/{{post.category}}" class="label label-primary pull-right">{{post.category | uppercase}}</a>
+    </div>
 </div>
 
-<h4 class="well well-small">Comments <i  ng-click="toggleComments()" toggle-comments="" class="glyphicon glyphicon-arrow-down showComments"></i></h4>
+<h4 class="well well-small">Comments <i ng-click="toggleComments()" toggle-comments="" class="glyphicon glyphicon-arrow-down showComments"></i>
+</h4>
 <ul class="media-list" class="comments" ng-show="showComments">
     <div class="media" ng-repeat="comment in post.comments track by $index">
         <a class="pull-left" href="#">

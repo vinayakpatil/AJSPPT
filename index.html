@@ -52,10 +52,28 @@
             </section>
 
             <section>
-                <h2>SPA - Single Page Applications</h2>
-                <a href="#" class="img">
-                    <img src="images/spa.jpg" alt="Single Page Applications"/>
-                </a>
+                <section>
+                    <h2>SPA - Single Page Applications</h2>
+                    <a href="#" class="img">
+                        <img src="images/spa.jpg" alt="Single Page Applications"/>
+                    </a>
+                </section>
+
+                <section>
+                    <h2>Advantages ?</h2>
+                    <ul>
+                        <li>Makes your app as ‘snappy’ as a native app.</li>
+                        <li>Reduces load on server.</li>
+                        <li>More freedom to manipulate content.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Disadvantage ?</h2>
+                    <ul>
+                        <li>Relies entirely on JavaScript.</li>
+                    </ul>
+                </section>
             </section>
 
             <section>
@@ -76,6 +94,7 @@
                     <li>Using Filters</li>
                     <li>Using Services</li>
                     <li>Modules & Routing</li>
+                    <li>Form Validations</li>
                     <li>Angular Seed</li>
                     <li>Exercise: Blog</li>
                 </ul>
@@ -258,6 +277,7 @@
                 </section>
             </section><!-- Using directives end -->
 
+
             <!-- Using filters begin -->
             <section>
                 <section>
@@ -398,6 +418,80 @@ angular.module('App', ['ngRoute'])
                 </section>
 
             </section><!-- Routing end -->
+
+            <!-- Form validations beginning -->
+            <section>
+                <section>
+                    <h2>Form Validations</h2>
+                    <p>Angular makes validating form super simple.</p>
+                </section>
+
+                <section>
+                    <h2>CSS Classes</h2>
+                    <ul>
+                        <li>ng-valid</li>
+                        <li>ng-invalid</li>
+                        <li>ng-pristine</li>
+                        <li>ng-dirty</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Binding</h2>
+                    <ul>
+                        <li>A form is an instance of FormController.</li>
+                        <li>Similarly, control is an instance of NgModelController.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Steps to remember before starting validations</h3>
+                    <ul>
+                        <li>Add 'novalidate' attribute to your form</li>
+                        <li>Form and input controls should have name attribute</li>
+                    </ul>
+                    <pre>
+                        <code>
+                        formName.input.property
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    <h2>Adding validation rules ?</h2>
+                    <ul>
+                        <li>required</li>
+                        <li>ng-minlength</li>
+                        <li>ng-maxlength</li>
+                        <li>ng-pattern</li>
+                        <li>email</li>
+                        <li>url</li>
+                        <li>Custom validators</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Usage</h2>
+                    <pre>
+                        <code>
+                        feedbackForm.email.$valid
+                        </code>
+                    </pre>
+                    <p>Other properties</p>
+                    <ul>
+                        <li>$pristine</li>
+                        <li>$dirty</li>
+                        <li>$invalid</li>
+                        <li>$error</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Demo</h2>
+                    <iframe src="http://jsbin.com/qezeb/3/embed?html,output&amp;height=500px" class="" id="" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 500px; max-height: 500px; height: 541px;"></iframe>
+                </section>
+
+            </section> <!-- Form validations end -->
 
             <!-- Angular Seed beginning -->
             <section>
