@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', ['myApp.services']).
-run(function($rootScope){
+run(function($rootScope) {
     $rootScope.categories = [
         'backbone',
         'angular',
@@ -27,7 +27,7 @@ controller('PostController', function($scope, blogAPI, $routeParams) {
         post.comments = post.comments.split(",");
         $scope.post = post;
     }, function(errorMsg) {
-        cosole.error(errorMsg);d87
+        cosole.error(errorMsg);
     });
 
     $scope.toggleComments = function(){
@@ -35,16 +35,16 @@ controller('PostController', function($scope, blogAPI, $routeParams) {
     };
 
 }).
-controller('CategoryController', function($scope, blogAPI, $routeParams){
+controller('CategoryController', function($scope, blogAPI, $routeParams) {
     $scope.category = $routeParams.category;
-    blogAPI.getPostsByCategory($routeParams.category).then(function(posts){
+    blogAPI.getPostsByCategory($routeParams.category).then(function(posts) {
         $scope.posts = posts;
     }, function(errorMsg) {
         cosole.error(errorMsg);
     });
 }).
-controller('FeedbackController', function($scope){
-    $scope.submitForm = function(){
+controller('FeedbackController', function($scope) {
+    $scope.submitForm = function() {
         console.log("in Feedback form submit handler");
     };
 });

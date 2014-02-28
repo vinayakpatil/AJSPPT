@@ -36,11 +36,11 @@ angular.module('myApp.services', [])
             return deferred.promise;
         };
 
-        this.getPostsByCategory = function(category){
+        this.getPostsByCategory = function(category) {
             var deferred = $q.defer();
             if (_posts) {
                 deferred.resolve(_filterByCategory(category));
-            } else{
+            } else {
                 this.getPosts().then(function() {
                     deferred.resolve(_filterByCategory(category));
                 }, function() {
@@ -52,6 +52,7 @@ angular.module('myApp.services', [])
         };
 
         /* Helper functions */
+
         function _findPost(id) {
             var index, length, post;
             for (index = 0, length = _posts.length; index < length; index++) {
@@ -63,10 +64,10 @@ angular.module('myApp.services', [])
             return post;
         }
 
-        function _filterByCategory(category){
-            return _posts.filter(function(post){
+        function _filterByCategory(category) {
+            return _posts.filter(function(post) {
                 return post.category === category;
-            })
+            });
         }
     })
     .value('version', '0.1');
