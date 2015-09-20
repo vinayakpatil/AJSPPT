@@ -36,14 +36,17 @@
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
+
+            <!-- Course Title -->
             <section>
                 <h1>Angular JS</h1>
                 <h3>HTML Enhanced Web Apps</h3>
                 <p>
-                    <small>Created by - Vinayak Patil</small>
+                    <small>Authored by - Vinayak Patil</small>
                 </p>
             </section>
 
+            <!-- HEADS UP -->
             <section>
                 <h2>Heads Up</h2>
                 <a href="#" class="img">
@@ -51,6 +54,7 @@
                 </a>
             </section>
 
+            <!-- SPA -->
             <section>
                 <section>
                     <h2>SPA - Single Page Applications</h2>
@@ -60,7 +64,7 @@
                 </section>
 
                 <section>
-                    <h2>Advantages ?</h2>
+                    <h2>Advantages?</h2>
                     <ul>
                         <li>Makes your app as ‘snappy’ as a native app.</li>
                         <li>Reduces load on server.</li>
@@ -69,13 +73,14 @@
                 </section>
 
                 <section>
-                    <h2>Disadvantage ?</h2>
+                    <h2>Disadvantage?</h2>
                     <ul>
                         <li>Relies entirely on JavaScript.</li>
                     </ul>
                 </section>
             </section>
 
+            <!-- Course Structure -->
             <section>
                 <h2>Course Structure</h2>
                 <ul>
@@ -84,19 +89,33 @@
                 </ul>
             </section>
 
+            <!-- Prerequisites -->
+            <section>
+                <h2>Course Prerequisites</h2>
+                <ul>
+                    <li>HTML - Basics</li>
+                    <li>JavaScript - Intermediate
+                    	<ul>
+                    		<li>Object Oriented Programming</li>
+                    		<li>Prototypes</li>
+                    		<li>Prototypical Inheritance</li>
+                    		<li>AJAX</li>
+                    	</ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Agenda -->
             <section>
                 <h2>Agenda: For Beginners</h2>
                 <ul>
                     <li>Why AngularJS?</li>
-                    <li>Angular Bird's eye view</li>
                     <li>Controllers and Scopes</li>
-                    <li>Using Directives</li>
-                    <li>Using Filters</li>
-                    <li>Using Services</li>
+                    <li>Directives</li>
+                    <li>Filters</li>
+                    <li>Services</li>
                     <li>Modules & Routing</li>
                     <li>Form Validations</li>
-                    <li>Angular Seed</li>
-                    <li>Exercise: Blog</li>
                 </ul>
             </section>
 
@@ -107,8 +126,7 @@
                 </section>
 
                 <section>
-                    <h2>MVC done right</h2>
-                    <img src="images/mvc-done-right.png" alt="MVC done right">
+                    <h2>It's a modular Framework</h2>
                 </section>
 
                 <section>
@@ -117,13 +135,10 @@
 
                 <section>
                     <h2>Teaches new HTML tricks</h2>
-                    <iframe src="http://jsbin.com/vatuw/5/embed?html&amp;height=500px" class="" id="" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 500px; max-height: 500px; height: 541px;"></iframe>
                 </section>
 
                 <section>
                     <h2>Dependency Injection</h2>
-                    <iframe src="http://jsbin.com/vatuw/5/embed?js&amp;height=500px" class="" id="" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 500px; max-height: 500px; height: 541px;"></iframe>
-
                 </section>
 
                 <section>
@@ -147,7 +162,7 @@
             <!-- End of Why Angular JS vertical slides -->
 
             <!-- How angular js works beginning -->
-            <section>
+            <!-- <section>
                 <section>
                     <h2>How does angular work ?</h2>
                 </section>
@@ -164,44 +179,91 @@
                     </a>
                     <p>Two way data binding</p>
                 </section>
-            </section><!-- How angular js works end -->
+            </section> --><!-- How angular js works end -->
 
             <!-- Controllers and Scope beginning -->
             <section>
                 <section>
                     <h2>Controllers and Scope</h2>
                 </section>
-                <section>
-                    <p>Using Angular Controllers, we are able to map a section of html to a AngularJS Scope</p>
-                    <pre><code>
-&lt;div ng-controller=&quot;MainCtrl&quot;&gt;
-  ...
-&lt;/div&gt;
-&lt;script&gt;
-  function MainCtrl($scope) {
 
-  }
-&lt;/script&gt;
+
+                <!-- Controllers -->
+                <section>
+                    <p>Controller is defined by a JavaScript constructor function that is used to augment the Angular Scope</p>
+                </section>
+
+                <!-- Code snippet -->
+                <section>
+                    <p>Contoller Registration</p>
+                    <pre><code>
+var&nbsp;myApp&nbsp;=&nbsp;angular.module('myApp',[]);
+
+myApp.controller('GreetingController',&nbsp;['$scope',&nbsp;function($scope)&nbsp;{
+&nbsp;&nbsp;$scope.greeting&nbsp;=&nbsp;'Hola!';
+}]);
                     </code></pre>
                 </section>
+
                 <section>
-                    <p>Controller is used to augment scope object</p>
-                    <iframe src="http://jsbin.com/pavon/9/embed?html,output&amp;height=500px" class="" id="" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 500px; max-height: 500px; height: 541px;"></iframe>
+                    <p>Controller Instantiation</p>
+                    <pre><code>
+&lt;div ng-controller=&quot;GreetingController&quot;&gt;
+  {{ greeting }}
+&lt;/div&gt;
+                    </code></pre>
+                </section>                                
+
+
+                <!-- Scopes -->
+                <section>
+	                <p>Scope is the glue between application controller and the view</p>
+                	<a href="#" class="img">
+	                    <img src="images/concepts-databinding2.png" alt="Angular Components" width="800" />
+	                </a>
                 </section>
 
                 <section>
+                	<p>Scope Hierarchy</p>
+                	<a href="#" class="img">
+	                    <img src="images/concepts-scope.png" alt="Scope Hierarchy" width="800" />
+	                </a>
+                </section>
+
+                <section>
+                    <p>We can create a child scope in 3 ways</p>
                     <ul>
-                        <li>Scope is an object in memory</li>
-                        <li>Scope can be nested</li>
-                        <li>We can create a child scope in 3 ways
-                            <ul>
-                                <li>Child scope uses same scope as parent</li>
-                                <li>Child scope inherits from parent scope</li>
-                                <li>Child scope is isolated from parent</li>
-                            </ul>
-                        </li>
+                        <li>Child scope uses same scope as parent</li>
+                        <li>Child scope inherits from parent scope</li>
+                        <li>Child scope is isolated from parent</li>
                     </ul>
                 </section>
+
+                <section>
+                    <p>Scope Events Propagation</p>
+                    <pre><code>
+angular.module('eventExample', [])
+.controller('EventController', ['$scope', function($scope) {
+  $scope.count = 0;
+  $scope.$on('MyEvent', function() {
+    $scope.count++;
+  });
+}]);                 
+                    </code></pre>
+                    <p>The event can be broadcasted ($broadcast) to the scope children or emitted ($emit) to scope parents.</p>
+                </section>
+
+                <section>
+                    <p>Two way data-binding</p>
+                	<a href="#" class="img">
+	                    <img src="images/Two_Way_Data_Binding.png" alt="Two_Way_Data_Binding" width="800" />
+	                </a>
+                </section>
+
+                <section>
+	                <h1>DEMO</h1>
+	            </section>
+                
             </section><!-- Controllers and scope end -->
 
             <!-- Using Directives Beginning -->
